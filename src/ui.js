@@ -26,6 +26,41 @@ class UI {
 
     this.post.innerHTML = output;
   }
+
+  showAlert(message, className) {
+    this.clearAlert();
+
+    // Create Div
+    const div = document.createElement('div');
+    // Add classes
+    div.className = className;
+    // Add text
+    div.appendChild(document.createTextNode(message));
+    // Get parent
+    const container = document.querySelector('.postContainer');
+    // Get posts
+    const posts = document.querySelector('#posts');
+    // Insert alert div
+    container.insertBefore(div, posts);
+
+    // TimeOut
+    setTimeout(() => {
+      this.clearAlert();
+    }, 3000);
+  }
+
+  clearAlert() {
+    const currentAlert = document.querySelector('.alert');
+
+    if (currentAlert) {
+      currentAlert.remove();
+    }
+  }
+
+  clearFields() {
+    this.titleInput.value = '';
+    this.bodyInput.value = '';
+  }
 }
 
 export const ui = new UI();
