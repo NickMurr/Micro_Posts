@@ -1,3 +1,12 @@
-const person = require('./mymodule1');
+// CommonJS module Syntax
+// const person = require('./mymodule1');
 
-console.log(person.name);
+// ES2015 Moduke
+// import { person, sayHello } from './mymodule2';
+// import * as mod from './mymodule2';
+import greeting from './mymodule2';
+
+
+// console.log(mod.person.name);
+// console.log(mod.sayHello());
+console.log(greeting);
